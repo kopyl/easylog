@@ -69,5 +69,3 @@ log(range(13))
 # Added in v1.3.1:
 - Put Telegram bot token and admin username (your username you need bot to send messages to) to separate files telegram_auth.py. It's just easily upload updated config file (if it's been updated) to github without a need to change the token and admin id each upload after developing a new version.
 
-ыыы
-
