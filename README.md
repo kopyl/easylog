@@ -66,3 +66,6 @@ log(range(13))
 - Added autoformat feature to settings. To make your print output look clear: (examples: https://imgur.com/a/pyDUHKK): it basically checks if it has date in arguments or settings and if it does, then it adds another blank line in terminal prints between lines to improve readibility. If date wasn't required to print, it will print (log) content as usualy print() function does. Spent around 6 hours on this feature. It was the most complex probablt.
 - Forgot to set date to True and specified date format? No problema, date will be set as True for ya!
 
+# Added in v1.3.1:
+- Put Telegram bot token and admin username (your username you need bot to send messages to) to separate files telegram_auth.py. It's just easily upload updated config file (if it's been updated) to github without a need to change the token and admin id each upload after developing a new version.
+
