@@ -218,5 +218,6 @@ def print_stderr_and_attach_to_log_file(file=file, mode='a'):
 
 
 
+l = log
 import atexit
 atexit.register(print_stderr_and_attach_to_log_file) # when program ends even with erros, perform stderr file reading and printing + saving + deleting the file.
