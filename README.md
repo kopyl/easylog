@@ -1,4 +1,4 @@
-test text
+test text!
 
 # Requirements:
 For Telegram logging: pip install pyTelegramBotAPI==0.3.0 . But you don't need to install it unless you wish to log something to Telegram.
