@@ -1,8 +1,13 @@
 
+# Description:
+- Print anything to both – file and terminal in realtime just by log() or l() instead of useles print();
+- Get Traceback errors to Telegram;
+- Add date to your prints and indulge on smart formatting.
+
 # Requirements:
 For Telegram logging: pip install pyTelegramBotAPI==0.3.0 . But you don't need to install it unless you wish to log something to Telegram.
 
-# Description:
+# How to use:
 download easylog.py to your project's directory; then write:
 from easylog import *
 
@@ -28,6 +33,7 @@ Spend around 5 hours to develop this solution.
 
 # Known issues I don't know yet how to solve:
 - Setting custom file doesn't work as expected as from example here: tg_log('New text', date=True, file='filex.txt') . Text is logging to custom files but errors are ignored.
+- Couldn't get it to send messages to telegram if using it alongside Telegram handlers.
 
 # Yes, this also works:
 list = [1,2,3,4]
