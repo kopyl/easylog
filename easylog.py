@@ -1,6 +1,6 @@
 
-from config import *
-from telegram_auth import BOT_TOKEN, YOUR_TELEGRAM_ID
+from easylog.config import *
+from easylog.telegram_auth import BOT_TOKEN, YOUR_TELEGRAM_ID
 
 import sys
 logfile_open_append = open(errors_file, "w")
@@ -123,7 +123,7 @@ def unlog(lines_to_clean=1, file=file):
 
 
 
-def tg_log(*content, date=date, mode='a', file=file, sep=' ', end='\n', date_format=date_format, errors_file=errors_file, telegram_date=telegram_date):
+def tg_log(*content, date=date, mode='a', file=file, sep=' ', end='\n', date_format=date_format, errors_file=errors_file, telegram_date=telegram_date, tg_id=YOUR_TELEGRAM_ID):
 	
 	"""
 	Send text to telegram and save it to file. 
@@ -145,15 +145,15 @@ def tg_log(*content, date=date, mode='a', file=file, sep=' ', end='\n', date_for
 			with open(file, mode) as log_file:
 				log_file.write(timestamp_variable+'\n'+str(sep.join(str(each) for each in content))+f'\nSending "{sep.join(str(each) for each in content)}" to your Telegram')
 		if telegram_date == True:
-			telebot.TeleBot(BOT_TOKEN).send_message(YOUR_TELEGRAM_ID, timestamp_variable+'\n'+str(sep.join(str(each) for each in content)))
+			telebot.TeleBot(BOT_TOKEN).send_message(tg_id, timestamp_variable+'\n'+str(sep.join(str(each) for each in content)))
 		else:
-			telebot.TeleBot(BOT_TOKEN).send_message(YOUR_TELEGRAM_ID, str(sep.join(str(each) for each in content)))
+			telebot.TeleBot(BOT_TOKEN).send_message(tg_id, str(sep.join(str(each) for each in content)))
 		print(before_line+timestamp_variable+'\n'+str(sep.join(str(each) for each in content))+f'\nSending "{sep.join(str(each) for each in content)}" to your Telegram')
 	else:
 		if file != False:
 			with open(file, mode) as log_file:
 				log_file.write(sep.join(str(each) for each in content)+f'\nSending "{sep.join(str(each) for each in content)}" to your Telegram')
-		telebot.TeleBot(BOT_TOKEN).send_message(YOUR_TELEGRAM_ID, sep.join(str(each) for each in content))
+		telebot.TeleBot(BOT_TOKEN).send_message(tg_id, sep.join(str(each) for each in content))
 		print(before_line+str(sep.join(str(each) for each in content))+f'\nSending "{sep.join(str(each) for each in content)}" to your Telegram')
 	with open(errors_file, 'r') as errors_file:
 		errors_file_content = "".join(errors_file.readlines())
